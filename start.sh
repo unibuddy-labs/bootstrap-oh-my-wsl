@@ -35,7 +35,7 @@ ub_bootstrap() {
     fi
     
     # Install unibuddly-labs/oh-my-wsl
-    bash -c "$(curl -fsSL https://raw.githubusercontent.com/unibuddy-labs/oh-my-wsl/master/install.sh)"
+    bash -c "$(curl -fsSL https://raw.githubusercontent.com/unibuddy-labs/oh-my-wsl/main/install.sh)"
 }
 
 ub_bootstrap
