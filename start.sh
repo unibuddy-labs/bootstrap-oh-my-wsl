@@ -29,17 +29,19 @@ ub_bootstrap() {
     
     # Make sure the root folder for storing source code exists
     UBSRC=${UBSRC:-/ub}
-    if [ ! -s $UBSRC ]; then
+    if [ ! -d $UBSRC ]; then
         sudo mkdir -p $UBSRC
         sudo chmod 777 $UBSRC
     fi
     
     # Install unibuddly-labs/oh-my-wsl
     cd $UBSRC
-    git clone git@github.com:unibuddy-labs/oh-my-wsl.git
+    if [ ! -d ${UBSRC}/oh-my-wsl ]; then
+        git clone git@github.com:unibuddy-labs/oh-my-wsl.git
+    ]
     cd oh-my-wsl
-    git checkout main
-    bash install.sh
+    git checkout main >/dev/null 2>&1
+    bash ./install.sh
 }
 
 echo Bootstrapping oh-my-wsl ...
