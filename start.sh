@@ -38,4 +38,7 @@ ub_bootstrap() {
     bash -c "$(curl -fsSL https://raw.githubusercontent.com/unibuddy-labs/oh-my-wsl/main/install.sh)"
 }
 
+echo Bootstrapping oh-my-wsl ...
 ub_bootstrap
+echo All done!
+
