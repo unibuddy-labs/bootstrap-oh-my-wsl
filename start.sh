@@ -35,7 +35,11 @@ ub_bootstrap() {
     fi
     
     # Install unibuddly-labs/oh-my-wsl
-    bash -c "$(curl -fsSL https://raw.githubusercontent.com/unibuddy-labs/oh-my-wsl/main/install.sh)"
+    cd $UBSRC
+    git clone git@github.com:unibuddy-labs/oh-my-wsl.git
+    cd oh-my-wsl
+    git checkout main
+    bash install.sh
 }
 
 echo Bootstrapping oh-my-wsl ...
