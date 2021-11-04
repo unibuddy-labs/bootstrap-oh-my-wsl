@@ -41,6 +41,7 @@ ub_bootstrap() {
     fi
     cd oh-my-wsl
     git checkout main >/dev/null 2>&1
+    cat ./install.sh
     bash ./install.sh
 }
 
