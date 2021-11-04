@@ -38,7 +38,7 @@ ub_bootstrap() {
     cd $UBSRC
     if [ ! -d ${UBSRC}/oh-my-wsl ]; then
         git clone git@github.com:unibuddy-labs/oh-my-wsl.git
-    ]
+    fi
     cd oh-my-wsl
     git checkout main >/dev/null 2>&1
     bash ./install.sh
