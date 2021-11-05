@@ -14,7 +14,7 @@ ub_bootstrap() {
     read -p 'e-mail address: ' email
     git config --global user.email ${email}
     read -p 'full name: ' name
-    git config --global user.name ${name}
+    git config --global user.name "${name}"
 
     # Configure SSH
     ssh-keygen -q -t rsa -N '' -C ${email} -f ~/.ssh/id_rsa <<<y 2>&1 >/dev/null
