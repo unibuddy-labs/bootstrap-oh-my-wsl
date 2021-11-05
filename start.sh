@@ -19,7 +19,7 @@ ub_bootstrap() {
     # Configure SSH
     ssh-keygen -q -t rsa -N '' -C ${email} -f ~/.ssh/id_rsa <<<y 2>&1 >/dev/null
     echo 'Please add the following SSH key to yourt github access keys'
-    cat ~/.ssh/ub_git_rsa.pub
+    cat ~/.ssh/id_rsa.pub
     read -s -n 1 -p 'Press any key to continue once done ...'
     echo ''
 
