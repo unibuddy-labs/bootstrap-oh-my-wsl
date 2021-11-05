@@ -9,5 +9,5 @@ creating a key with a passphrase, creating a keyt specific to `github.com`, and 
 To run the simplified bootstrap into oh-my-wsl run:
 
 ```
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/unibuddy-labs/bootstrap-oh-my-wsl/master/start.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/unibuddy-labs/bootstrap-oh-my-wsl/main/start.sh)"
 ```
