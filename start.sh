@@ -15,12 +15,9 @@ ub_bootstrap() {
         echo 'Please provide the email you use to connect to Unibuddy github, and your full name'
         read -p 'e-mail address: ' email
         read -p 'full name: ' name
-        cat > $gitconfig <<EOF
-[user]
-    email = ${email}
-    name = ${name}
-
-EOF
+        echo -e "[user]" > $gitconfig
+        echo -e '\temail = '${email} >> $gitconfig
+        echo -e '\tname = '${name} >> $gitconfig
         git config --global includIf.gitdir:${UBSRC}/.path $gitconfig
     fi
 
@@ -35,11 +32,10 @@ EOF
         echo ''
 
         # Configure SSH to use this key for github
-        cat >> ~/.ssh/config <<EOF
-Host unibuddy ub github.com
-    HostName github.com
-    IdentityFile ~/.ssh/id_rsa_ub
-EOF
+        sshconfig=~/.ssh/config
+        echo 'Host unibuddy ub github.com' > $sshconfig
+        echo -e '\tHostName github.com' >> $sshconfig
+        echo -e '\tIdentityFile ~/.ssh/id_rsa_ub' >> $sshconfig
     fi
 
     # Check this config is OK by listing a private repo
