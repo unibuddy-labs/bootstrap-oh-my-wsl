@@ -10,15 +10,14 @@ ub_bootstrap() {
     fi
 
     # Configure git
-    gitconfig=${UBSRC}/.gitconfig
+    gitconfig=${UBSRC}/.gitconfig.done
     if [ ! -f $gitconfig ]; then
         echo 'Please provide the email you use to connect to Unibuddy github, and your full name'
         read -p 'e-mail address: ' email
         read -p 'full name: ' name
-        echo -e "[user]" > $gitconfig
-        echo -e '\temail = '${email} >> $gitconfig
-        echo -e '\tname = '${name} >> $gitconfig
-        git config --global includIf.gitdir:${UBSRC}/.path $gitconfig
+        git config --global user.email "${email}"
+        git config --global user.name "${name}"
+        echo "Installed" > $gitconfig
     fi
 
     # Configure SSH
