@@ -4,6 +4,7 @@ ub_bootstrap() {
 
     # Ensure the root folder for storing source code exists
     UBSRC=${UBSRC:-/ub}
+    echo "Source code root is " $UBSRC
     if [ ! -d $UBSRC ]; then
         sudo mkdir -p $UBSRC
     fi
