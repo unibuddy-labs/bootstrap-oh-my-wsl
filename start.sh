@@ -6,8 +6,8 @@ ub_bootstrap() {
     UBSRC=${UBSRC:-/ub}
     if [ ! -d $UBSRC ]; then
         sudo mkdir -p $UBSRC
-        sudo chmod 777 $UBSRC
     fi
+    sudo chmod 777 $UBSRC
 
     # Configure git
     gitconfig=${UBSRC}/.gitconfig.done
